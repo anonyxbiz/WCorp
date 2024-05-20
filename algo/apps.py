@@ -81,12 +81,13 @@ class Components:
         return request.get_header(value)
 
 def keepmealive(url, other):
+    from time import sleep
     # Get the site to keep it active
     quits = 0
     gets = 0
     try:
         while quits <= 1:
-            sleep(30)
+            sleep(120)
             rqs.get(url)
             gets += 1
             
