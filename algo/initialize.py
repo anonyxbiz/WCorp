@@ -13,13 +13,13 @@ p = print
 app_info = {'title': 'gAAAAABmSpkNXGxMymPKFKuk3mPNKTxTfCqjPGdivJizB13if089HxaTQgbgwcuAQD5VXwSfGK9yN8lUU9Q0tb_E4xL0v4WkwA==', 'url': 'https://example.com'}
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-t', "--thread",)    
+parser.add_argument('-key', "--key")   
+parser.add_argument('-url', "--url")    
+parser.add_argument('-stay', "--stay")    
 args = parser.parse_args()
 
-with open('secret.json') as f:
-    f = j.load(f)
-    safe_key = f[0]['key']  
-    app_info['url'] = f[0]['url']
+safe_key = args.key or None
+app_info['url'] = args.url or None
 
 class Error(Exception):
     def __init__(self, status=None, e=None, detail=None):

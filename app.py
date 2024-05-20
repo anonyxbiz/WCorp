@@ -48,7 +48,7 @@ def models():
         a.run(logman.logger(e))
        
 if __name__=="__main__":
-    stay = False
+    stay = args.stay
     if stay:
         from threading import Thread
         url = app_info['url']
