@@ -17,8 +17,7 @@ def static(filename):
     try:
         return static_file(filename, root='./static')
     except Exception as e:
-        a.run(Discord().logger(f'Application log: {e}'))
-        abort(403, e)
+        raise Error(e)
 
 @app.route('/')
 def index():

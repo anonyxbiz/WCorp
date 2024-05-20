@@ -25,12 +25,12 @@ class Error(Exception):
     def __init__(self, status=None, e=None, detail=None):
         self.errors = {
             'status': status,
-            'error': str(e).replace('Fernet', 'WCorp'),
-            'detail': detail
+            'error': str(e).replace('Fernet', 'WCorp')
         }
+        abort(status, self.errors)
     
     def __str__(self):
-        return str(self.errors)
+        return dict(self.errors)
 
 def safe(do=None, job=None):
     if do == "en":
@@ -40,4 +40,4 @@ def safe(do=None, job=None):
     return job  
                         
 if __name__ == "__main__":
-    p(Success('eh'))
+    pass
