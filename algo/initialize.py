@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-t', "--thread",)    
 args = parser.parse_args()
 
-with open('env.json') as f:
+with open('secret.json') as f:
     f = j.load(f)
     safe_key = f[0]['key']  
     app_info['url'] = f[0]['url']
